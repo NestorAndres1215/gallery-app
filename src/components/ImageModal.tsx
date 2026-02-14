@@ -44,7 +44,9 @@ const ImageModal: React.FC<Props> = ({ isOpen, onClose, photo }) => {
                   href={photo.links.download}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn btn-primary btn-sm">
+                    style={{ background: "linear-gradient(135deg, #667eea, #764ba2)" }}
+                  className="btn btn-sm text-white">
+                    
                   <FontAwesomeIcon icon={faDownload} className="me-2" />
                   Descargar
                 </a>
