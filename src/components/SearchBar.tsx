@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/SearchBar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faSpinner } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,7 +7,10 @@ interface Props {
   placeholder?: string;
 }
 
-const SearchBar: React.FC<Props> = ({ onSearch, placeholder = "Busca paisajes, tecnología, personas..." }) => {
+const SearchBar: React.FC<Props> = ({
+  onSearch,
+  placeholder = "Busca paisajes, tecnología, personas...",
+}) => {
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -26,37 +28,35 @@ const SearchBar: React.FC<Props> = ({ onSearch, placeholder = "Busca paisajes, t
   };
 
   return (
-    <form className="search-bar-container" onSubmit={submit} role="search">
-      <div className="search-bar-wrapper">
+    <form
+      onSubmit={submit}
+      className="container d-flex justify-content-center my-4"
+      role="search"
+    >
+      <div className="input-group shadow rounded-pill overflow-hidden" style={{ maxWidth: "640px" }}>
 
-        <label htmlFor="search-input" className="visually-hidden">
-          Buscar imágenes
-        </label>
         <input
-          id="search-input"
           type="text"
-          className="search-input"
+          className="form-control border-0 px-4"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder={placeholder}
           aria-label="Buscar imágenes"
           disabled={isLoading}
+          style={{ height: "56px" }}
         />
+
         <button
           type="submit"
-          className="search-button"
+          className="btn px-4 text-white"
+          style={{ background: "linear-gradient(135deg, #667eea, #764ba2)" }}
           disabled={isLoading || !value.trim()}
-          aria-label={isLoading ? "Buscando..." : "Buscar"}
         >
-          {isLoading ? (
-            <FontAwesomeIcon icon={faSpinner} spin />
-          ) : (
-            <FontAwesomeIcon icon={faSearch} />
-          )}
-          <span className="visually-hidden">
-            {isLoading ? "Buscando..." : "Buscar"}
-          </span>
+
+
+          <FontAwesomeIcon icon={faSearch} />
         </button>
+
       </div>
     </form>
   );

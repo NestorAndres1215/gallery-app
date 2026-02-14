@@ -26,7 +26,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="search-wrapper">
-          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+     
           <SearchBar onSearch={setQuery} placeholder="Busca paisajes, tecnología, personas..." />
         </div>
       </section>
