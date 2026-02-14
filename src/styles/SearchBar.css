@@ -1,4 +1,4 @@
-/* SearchBar.css */
+
 .search-bar-container {
   width: 100%;
   max-width: 640px;
@@ -107,7 +107,6 @@
   }
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .search-bar-wrapper {
     height: 52px;
@@ -129,7 +128,6 @@
   }
 }
 
-/* Accesibilidad */
 .visually-hidden {
   position: absolute;
   width: 1px;

@@ -1,11 +1,10 @@
-/* Home.css */
+
 .home-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Hero Section */
 .hero {
   padding: 4rem 2rem 3rem;
   text-align: center;
@@ -76,7 +75,6 @@
   font-weight: 400;
 }
 
-/* Search Wrapper */
 .search-wrapper {
   position: relative;
   max-width: 640px;
@@ -94,19 +92,17 @@
   pointer-events: none;
 }
 
-/* Asegúrate de que SearchBar tenga padding-left para el ícono */
 .search-wrapper > :global(.search-bar) {
   padding-left: 3rem !important;
 }
 
-/* Gallery Section */
 .gallery-section {
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .title {
     font-size: 2.4rem;

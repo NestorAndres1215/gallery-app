@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
   return (
     <main className="home-container">
-      {/* Hero Section */}
+ 
       <section className="hero">
         <div className="hero-content">
           <div className="icon-wrapper">
@@ -27,14 +27,12 @@ const Home: React.FC = () => {
           </p>
         </div>
 
-        {/* Search Bar con ícono */}
         <div className="search-wrapper">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
           <SearchBar onSearch={setQuery} placeholder="Busca paisajes, tecnología, personas..." />
         </div>
       </section>
 
-      {/* Galería */}
       <section className="gallery-section">
         <ImageGallery query={query} />
       </section>
