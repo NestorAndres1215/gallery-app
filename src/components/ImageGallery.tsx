@@ -2,11 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { useFetchImages } from "../hooks/useFetchImages";
 import ImageCard from "./ImageCard";
 import ImageSkeleton from "../components/ImageSkeleton";
-import "../styles/ImageGallery.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
-  const { images, loading, error, loadMore, hasMore } = useFetchImages(query);
+  const { images, loading, loadMore, hasMore } = useFetchImages(query);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const lastImageRef = useRef<HTMLDivElement>(null);
 
@@ -34,28 +33,16 @@ const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
   }, [images, loading, hasMore, loadMore]);
 
   return (
-    <div className="gallery-container">
+    <div className="container py-4">
 
-      {error && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="gallery-error"
-        >
-          <p>Lo sentimos, hubo un error al cargar las imágenes.</p>
-          <button onClick={() => window.location.reload()} className="retry-btn">
-            Reintentar
-          </button>
-        </motion.div>
-      )}
-
-      <div className="image-gallery-masonry">
+      <div className="row g-4">
         <AnimatePresence>
           {images.length > 0 ? (
             images.map((img, index) => (
               <motion.div
                 key={img.id}
                 ref={index === images.length - 1 ? lastImageRef : null}
+                className="col-6 col-md-4 col-lg-3 col-xl-2"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
@@ -66,30 +53,41 @@ const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
               </motion.div>
             ))
           ) : !loading && query ? (
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="no-results"
+              className="col-12 text-center py-5"
             >
-              No se encontraron imágenes para "<strong>{query}</strong>"
-            </motion.p>
+              <p className="fs-5 text-muted">
+                No se encontraron imágenes para{" "}
+                <strong className="text-dark">{query}</strong>
+              </p>
+            </motion.div>
           ) : null}
         </AnimatePresence>
       </div>
 
+      {/* Skeleton loading */}
       {loading && hasMore && (
-        <div className="skeleton-grid">
+        <div className="row g-4 mt-2">
           {[...Array(6)].map((_, i) => (
-            <ImageSkeleton key={`skeleton-${i}`} />
+            <div key={`skeleton-${i}`} className="col-6 col-md-4 col-lg-3 col-xl-2">
+              <ImageSkeleton />
+            </div>
           ))}
         </div>
       )}
 
+      {/* Fin de resultados */}
       {!hasMore && images.length > 0 && (
-        <p className="text-muted">¡Eso es todo! No hay más imágenes.</p>
+        <p className="text-muted text-center mt-4">
+          ¡Eso es todo! No hay más imágenes.
+        </p>
       )}
+
     </div>
   );
+
 };
 
 export default ImageGallery;

@@ -1,4 +1,4 @@
-// components/ImageSkeleton.tsx
+
 import React from "react";
 import "../styles/ImageSkeleton.css";
 
