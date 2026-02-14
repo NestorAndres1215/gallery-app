@@ -1,6 +1,5 @@
 
 import React from "react";
-import "../styles/ImageSkeleton.css";
 
 const ImageSkeleton: React.FC = () => {
   return (
