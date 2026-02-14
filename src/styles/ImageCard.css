@@ -80,14 +80,6 @@
 
 }
 
-
-
-.image-card:hover .info {
-  transform: translateY(0);
-}
-
-
-
 .image-card img[src=""] {
   background: linear-gradient(45deg, var(--primary-light), var(--secondary-color));
   background-size: 400% 400%;
