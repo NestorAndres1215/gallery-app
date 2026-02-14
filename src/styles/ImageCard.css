@@ -133,54 +133,6 @@
   transform: scale(1);
 }
 
-@media (max-width: 768px) {
-  .image-card {
-    aspect-ratio: 1/1;
-  }
-
-  .image-card::after {
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
-  }
-}
-
-@media (max-width: 480px) {
-  .image-card {
-    border-radius: var(--border-radius);
-  }
-
-  .image-card::after {
-    opacity: 1;
-    transform: scale(0.9);
-  }
-}
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-main: #0f172a;
-    --background-card: #1e293b;
-    --border-color: #334155;
-    --text-color: #f1f5f9;
-    --text-light: #94a3b8;
-  }
-
-  .image-card img[src=""] {
-    background: linear-gradient(45deg, #374151, #4b5563);
-  }
-
-  .image-card.loading {
-    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
-  }
-
-  .image-card::after {
-    background: rgba(30, 41, 59, 0.9);
-    color: var(--primary-light);
-  }
-}
 
 .image-card {
   will-change: transform, box-shadow;
