@@ -99,17 +99,6 @@
   background-size: 200% 100%;
 }
 
-a {
-  display: block;
-  transition: var(--transition-fast);
-  text-decoration: none !important;
-}
-
-a:focus {
-  outline: 3px solid rgba(99, 102, 241, 0.3);
-  outline-offset: 2px;
-  border-radius: var(--border-radius-xl);
-}
 
 .image-card:active {
   transform: translateY(-4px) scale(0.98);
@@ -147,11 +136,6 @@ a:focus {
 @media (max-width: 768px) {
   .image-card {
     aspect-ratio: 1/1;
-  }
-
-  .info {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: 12px;
   }
 
   .image-card::after {
