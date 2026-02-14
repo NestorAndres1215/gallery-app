@@ -1,0 +1,7 @@
+/* index.css */
+body {
+  margin: 0; /* quitar márgenes por defecto */
+  padding: 0;
+  background-color: #f0f4f8; /* aquí pones el color que quieras */
+  font-family: Arial, sans-serif;
+}
