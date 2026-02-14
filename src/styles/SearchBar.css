@@ -80,10 +80,6 @@
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
 }
 
-.search-button:active {
-  transform: scale(0.98);
-}
-
 .search-button:disabled {
   background: #ccc;
   cursor: not-allowed;

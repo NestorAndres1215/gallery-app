@@ -86,7 +86,7 @@ const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
       )}
 
       {!hasMore && images.length > 0 && (
-        <p className="end-message">¡Eso es todo! No hay más imágenes.</p>
+        <p className="text-muted">¡Eso es todo! No hay más imágenes.</p>
       )}
     </div>
   );
