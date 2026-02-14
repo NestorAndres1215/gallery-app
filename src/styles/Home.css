@@ -92,31 +92,3 @@
 }
 
 
-@media (max-width: 768px) {
-  .title {
-    font-size: 2.4rem;
-  }
-
-  .hero {
-    padding: 3rem 1.5rem 2rem;
-  }
-
-  .icon-wrapper {
-    width: 70px;
-    height: 70px;
-  }
-
-  .gallery-icon {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-}
