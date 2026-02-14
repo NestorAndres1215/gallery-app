@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import type { UnsplashPhoto } from "../types/unsplash";
 import ImageModal from "./ImageModal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faDownload, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+
 import "../styles/ImageCard.css";
 
 const ImageCard: React.FC<{ photo: UnsplashPhoto }> = ({ photo }) => {

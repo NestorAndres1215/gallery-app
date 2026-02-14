@@ -10,7 +10,6 @@ const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const lastImageRef = useRef<HTMLDivElement>(null);
 
-  // Paginación infinita
   useEffect(() => {
     if (!hasMore || loading) return;
 
@@ -36,7 +35,7 @@ const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
 
   return (
     <div className="gallery-container">
-      {/* Estados */}
+
       {error && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +49,6 @@ const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
         </motion.div>
       )}
 
-      {/* Galería */}
       <div className="image-gallery-masonry">
         <AnimatePresence>
           {images.length > 0 ? (
@@ -79,7 +77,6 @@ const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
         </AnimatePresence>
       </div>
 
-      {/* Loading más imágenes */}
       {loading && hasMore && (
         <div className="skeleton-grid">
           {[...Array(6)].map((_, i) => (
@@ -88,7 +85,6 @@ const ImageGallery: React.FC<{ query: string }> = ({ query }) => {
         </div>
       )}
 
-      {/* Fin de resultados */}
       {!hasMore && images.length > 0 && (
         <p className="end-message">¡Eso es todo! No hay más imágenes.</p>
       )}
