@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import ImageGallery from "../components/ImageGallery";
 import "../styles/Home.css";
-
-// Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages, faSearch } from "@fortawesome/free-solid-svg-icons";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 const Home: React.FC = () => {
   const [query, setQuery] = useState("");
 
   return (
     <main className="home-container">
- 
+
       <section className="hero">
         <div className="hero-content">
           <div className="icon-wrapper">
@@ -22,9 +20,9 @@ const Home: React.FC = () => {
             Explora millones de fotos
             <span className="highlight"> en alta calidad</span>
           </h1>
-          <p className="subtitle">
+          <h4 className="text-muted">
             Busca imágenes libres de derechos de Unsplash
-          </p>
+          </h4>
         </div>
 
         <div className="search-wrapper">
