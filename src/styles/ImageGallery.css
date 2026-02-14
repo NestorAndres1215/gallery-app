@@ -56,10 +56,6 @@
   transition: all 0.2s;
 }
 
-.retry-btn:hover {
-  background: #5a6fd8;
-  transform: translateY(-1px);
-}
 
 .no-results {
   grid-column: 1 / -1;
