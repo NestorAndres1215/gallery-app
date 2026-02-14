@@ -31,7 +31,7 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
 
-/* Container de la card */
+
 .image-card {
   position: relative;
   background: var(--background-card);
@@ -81,36 +81,12 @@
 }
 
 
-.info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg);
-  background: linear-gradient(to top,
-      var(--background-overlay) 0%,
-      rgba(0, 0, 0, 0.4) 60%,
-      transparent 100%);
-  color: var(--text-white);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  transform: translateY(100%);
-  transition: var(--transition);
-  z-index: 3;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
 
 .image-card:hover .info {
   transform: translateY(0);
 }
 
-.info::before {
-  content: '📷';
-  margin-right: var(--spacing-sm);
-  opacity: 0.8;
-}
+
 
 .image-card img[src=""] {
   background: linear-gradient(45deg, var(--primary-light), var(--secondary-color));
@@ -190,12 +166,6 @@ a:focus {
 @media (max-width: 480px) {
   .image-card {
     border-radius: var(--border-radius);
-  }
-
-  .info {
-    padding: var(--spacing-sm);
-    transform: translateY(0);
-    background: var(--background-overlay);
   }
 
   .image-card::after {

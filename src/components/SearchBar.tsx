@@ -28,11 +28,7 @@ const SearchBar: React.FC<Props> = ({ onSearch, placeholder = "Busca paisajes, t
   return (
     <form className="search-bar-container" onSubmit={submit} role="search">
       <div className="search-bar-wrapper">
-        <FontAwesomeIcon
-          icon={isLoading ? faSpinner : faSearch}
-          className={`search-icon ${isLoading ? "spin" : ""}`}
-          aria-hidden="true"
-        />
+
         <label htmlFor="search-input" className="visually-hidden">
           Buscar imágenes
         </label>
